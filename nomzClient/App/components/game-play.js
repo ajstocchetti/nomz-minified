@@ -1,8 +1,10 @@
 // cite your sources:
 // http://browniefed.com/blog/2015/06/06/react-native-tinder-like-cards/
 // https://github.com/brentvatne/react-native-animated-demo-tinder/blob/master/index.ios.js
-
 'use strict';
+const GAME_DATA_URL = 'http://localhost:8080/api/game/start';
+// const GAME_DATA_URL = 'http://localhost:8080/api/game/safe';
+
 var React = require('react-native');
 
 var Results = require('./game-results.js');
@@ -18,8 +20,6 @@ var {
   View
 } = React;
 
-// const GAME_DATA_URL = 'http://localhost:8080/api/game/start';
-const GAME_DATA_URL = 'http://localhost:8080/api/game/safe';
 const MIN_NUM_SWIPES = 20;
 
 var Application = React.createClass({

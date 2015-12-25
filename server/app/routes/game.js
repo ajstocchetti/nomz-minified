@@ -25,7 +25,7 @@ router.get('/start', ensureAuthenticated, function (req, res) {
    var imgArr = [];
    fsHelper.venues(params)
    .then(function(response) {
-     return Promise.map(response.response.venues, function(v) {
+     return Promise.map(response, function(v) {
        return fsHelper.venue({ venue_id: v.id })
      })
     })
