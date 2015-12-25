@@ -9,14 +9,6 @@ var ensureAuthenticated = function (req, res, next) {
   next(); // dont worry about authentication for now
 }
 
-// var ensureAuthenticated = function (req, res, next) {
-//     if (req.isAuthenticated()) {
-//         next();
-//     } else {
-//         res.status(401).end();
-//     }
-// };
-
 router.get('/near', ensureAuthenticated, function (req, res) {
   var ll = req.query.lat+","+req.query.long;
   var params = {

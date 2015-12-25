@@ -14,10 +14,5 @@ Yes, only the restaurant won't send you obnoxious messages at 4am.
 1. Create .env file at the root location   
 2. Fill in the following keys:  
 
-MONGOURI=XYZ  
-SESSION_SECRET=XYZ  
 FOURSQUARE_CLIENT_ID=XYZ  
 FOURSQUARE_CLIENT_SECRET=XYZ  
-AWS_ACCESS_KEY_ID=XYZ  
-AWS_SECRET_ACCESS_KEY=XYZ  
-AWSBUCKET=XYZ  

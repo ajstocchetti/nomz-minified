@@ -7,7 +7,6 @@ var React = require('react-native');
 
 var Results = require('./game-results.js');
 var Button = require('./react-native-button');
-var color = require('./colors');
 var Dimensions = require('Dimensions');
 var windowSize = Dimensions.get('window');
 var {
@@ -19,9 +18,8 @@ var {
   View
 } = React;
 
-// const GAME_DATA_URL = 'http://localhost:1337/api/game/nomzStorage';
-// const GAME_DATA_URL = 'http://localhost:1337/api/game/start';
-const GAME_DATA_URL = 'http://localhost:1337/api/game/safe';
+// const GAME_DATA_URL = 'http://localhost:8080/api/game/start';
+const GAME_DATA_URL = 'http://localhost:8080/api/game/safe';
 const MIN_NUM_SWIPES = 20;
 
 var Application = React.createClass({

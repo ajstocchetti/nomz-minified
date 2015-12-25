@@ -1,5 +1,6 @@
 'use strict';
 
+const BASEURL = "http://localhost:8080";
 var React = require('react-native');
 var GameResultDetails = require('./game-result-details');
 
@@ -34,7 +35,7 @@ class GameResults extends Component {
     }
 
     componentDidMount() {
-        let url = "http://localhost:1337/api/recommend";
+        let url = BASEURL + "/api/recommend";
         url += "?lat=" + this.props.lat;
         url += "&long=" + this.props.long;
         fetch(url, {
@@ -152,8 +153,8 @@ var styles = StyleSheet.create({
         height: 120
     },
     venueHeader: {
-        fontWeight: 'bold', 
-        color: 'white', 
+        fontWeight: 'bold',
+        color: 'white',
         fontSize: 20,
         backgroundColor: 'transparent',
         shadowColor: 'black',
@@ -165,7 +166,7 @@ var styles = StyleSheet.create({
         shadowOpacity: 0.9
     },
     venueSubheader: {
-        fontWeight: 'bold', 
+        fontWeight: 'bold',
         color: 'white',
         backgroundColor: 'transparent',
         shadowColor: 'black',
@@ -177,12 +178,12 @@ var styles = StyleSheet.create({
         shadowOpacity: 0.9
     },
     venueRating: {
-        position: 'absolute', 
-        left: 20, 
+        position: 'absolute',
+        left: 20,
         top: -10,
-        fontSize: 110, 
-        color: '#4169E1', 
-        opacity: 0.5, 
+        fontSize: 110,
+        color: '#4169E1',
+        opacity: 0.5,
         backgroundColor: 'transparent'
     }
 });

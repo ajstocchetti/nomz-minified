@@ -1,7 +1,6 @@
 'use strict';
 
 var router = require('express').Router(),
-  // RecommendationService = require('../services/Recommendations.js'),
   fsHelper = require('./foursquare-helper'),
   _ = require('lodash');
 

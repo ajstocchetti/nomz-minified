@@ -1,10 +1,10 @@
 "use strict";
- 
+
 var React = require("react-native");
 var api = require('../utils/api');
 var Button = require('../react-native-button');
 var Home = require('../home-screen');
-var Colors = require('../colors')
+// var Colors = require('../colors')
 
 var {
     Component,
@@ -18,9 +18,9 @@ var {
 } = React;
 
 var Icon = require('react-native-vector-icons/FontAwesome');
-  
+
 class LoginView extends Component {
- 
+
     constructor(props) {
         super(props);
         this.state = {
@@ -31,7 +31,7 @@ class LoginView extends Component {
         };
     }
 
- 
+
    onSubmitPressed() {
         this.setState({
             isLoading: true
@@ -107,10 +107,10 @@ class LoginView extends Component {
             </View>
         );
     }
- 
- 
+
+
 };
- 
+
 var styles = StyleSheet.create({
     container: {
         padding: 30,

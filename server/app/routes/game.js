@@ -3,7 +3,6 @@ var router = require('express').Router();
 var _ = require('lodash');
 var fsHelper = require('./foursquare-helper');
 var Promise = require('bluebird');
-var MenuItem = require('mongoose').model('MenuItem')
 
 module.exports = router;
 
@@ -11,42 +10,10 @@ var ensureAuthenticated = function (req, res, next) {
   next(); // dont worry about authentication for now
 }
 
-// var ensureAuthenticated = function (req, res, next) {
-//     if (req.isAuthenticated()) {
-//         next();
-//     } else {
-//         res.status(401).end();
-//     }
-// };
-
 router.get('/safe', function(req, res) {
   let img = require('../services/safe-images.js');
   res.json(_.shuffle(img))
 });
-
-router.get('/nomzStorage', ensureAuthenticated, function(req, res) {
-  let respArr = [];
-  MenuItem.find({})
-  .then(function(items) {
-    items.forEach(function(item) {
-      let imgObj = {
-        name: item.name,
-        category: item.category,
-        venue: item.venue,
-        tags: item.tags
-      }
-      item.images.forEach(url => {
-        imgObj.url = url;
-        respArr.push(imgObj);
-      })
-    });
-    return respArr;
-  })
-  .then(function(respArr) {
-    respArr = _.shuffle(respArr)
-    res.json(respArr);
-  })
-})
 
 router.get('/start', ensureAuthenticated, function (req, res) {
   var ll = req.query.lat+","+req.query.long;
