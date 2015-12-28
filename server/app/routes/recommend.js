@@ -12,13 +12,8 @@ var ensureAuthenticated = function(req, res, next) {
 
 router.post('/', ensureAuthenticated, function (req, res) {
   var prefs = req.body;
-  var ll = req.query.lat+","+req.query.long;
-  var params = {
-    'll': ll,
-    'categoryId': '4d4b7105d754a06374d81259',
-    'radius': 1000
-   };
-   fsHelper.venues(params)
+  var ll = req.query.lat + "," + req.query.long;
+   fsHelper.venues(ll)
    .then(venues => venues.map(v =>
      _.pick(v, 'id', 'name', 'location', 'categories', 'attributes', 'stats', 'details', 'url' )
    ))
